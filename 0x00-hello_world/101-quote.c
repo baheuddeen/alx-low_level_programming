@@ -1,0 +1,18 @@
+#include<unistd.h>
+
+/**
+ * main - Entry point
+ * description: write to stdout on linux
+ * Return: 1 (successful)
+*/
+
+int main(void)
+{
+write(
+1,
+"and that piece of art is useful\" - Dora Korpar, 2015-10-19\r\n",
+60
+);
+
+return (1);
+}
