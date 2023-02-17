@@ -10,14 +10,15 @@
 
 int main(void)
 {
+	int i, j, x, y;
 
-	for (int i = 0; i <= 9; i++)
+	for (i = 0; i <= 9; i++)
 	{
-		for (int j = 0; j <= 9; j++)
+		for (j = 0; j <= 9; j++)
 		{
-			for (int x = 0; x <= 9; x++)
+			for (x = 0; x <= 9; x++)
 			{
-				for (int y = 0; y <= 9; y++)
+				for (y = 0; y <= 9; y++)
 				{
 					if (i == x && j == y)
 					{
