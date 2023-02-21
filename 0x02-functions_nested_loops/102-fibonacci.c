@@ -13,14 +13,14 @@ int main(void)
 
 	previous = 1;
 	current = 2;
-	printf("%ld, %ld, ", previous, current);
+	printf("%lu, %lu, ", previous, current);
 	for (i = 0; i < 50; i++)
 	{
 		int temp = current;
 
 		current += previous;
 		previous = temp;
-		printf("%ld", current);
+		printf("%lu", current);
 		if (i != 49)
 			printf(", ");
 	}
