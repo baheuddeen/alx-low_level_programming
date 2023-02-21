@@ -9,18 +9,18 @@
 int main(void)
 {
 	int i;
-	long previous, current;
+	unsigned long long previous, current;
 
 	previous = 1;
 	current = 2;
-	printf("%ld, %ld, ", previous, current);
+	printf("%lld, %lld, ", previous, current);
 	for (i = 0; i < 50; i++)
 	{
 		int temp = current;
 
 		current += previous;
 		previous = temp;
-		printf("%ld", current);
+		printf("%lld", current);
 		if (i != 49)
 			printf(", ");
 	}
