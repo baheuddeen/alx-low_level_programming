@@ -8,22 +8,22 @@
 
 int main(void)
 {
-	int i;
-	unsigned long previous, current;
+	int count;
+	unsigned long previous = 0, current = 1, sum;
 
-	previous = 1;
-	current = 2;
-	printf("%lu, %lu, ", previous, current);
-	for (i = 0; i < 50; i++)
+	for (count = 0; count < 50; ++count)
 	{
-		int temp = current;
+		sum = previous + current;
+		printf("%lu", sum);
 
-		current += previous;
-		previous = temp;
-		printf("%lu", current);
-		if (i != 49)
+		previous = current;
+		current = sum;
+
+		if (count == 49)
+			printf("\n");
+		else
 			printf(", ");
 	}
-	putchar('\n');
+
 	return (0);
 }
