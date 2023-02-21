@@ -37,12 +37,12 @@ int main(void)
         }
 
         /** print Sum */
-        bool print_flage = false;
+        int print_flage = 0;
         for(i = 0; i <= 29; i++)
         {
             if (sum[i] != '0')
-                print_flage = true;
-            if(print_flage)
+                print_flage = 1;
+            if(print_flage == 1)
                 printf("%c", sum[i]);
         }
 
