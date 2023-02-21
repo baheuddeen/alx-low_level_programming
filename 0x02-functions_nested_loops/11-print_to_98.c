@@ -41,7 +41,7 @@ void print_to_98(int n)
 int print_number(int n)
 {
 	int x = 1;
-	int num;
+	int num = n;
 
 	if (n == 0)
 	{
@@ -53,10 +53,9 @@ int print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n = n * -1;
+		num = num * -1;
 	}
 
-	num = n;
 	/** get the upper 10s of the number */
 	while (num >= x)
 	{
