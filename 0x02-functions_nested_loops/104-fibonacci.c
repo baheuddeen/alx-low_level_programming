@@ -28,7 +28,9 @@ int main(void)
 
     for(count = 0; count < 98; count++)
     {
-        /** sum = previous + current */
+	int print_flage = 0;
+
+	 /** sum = previous + current */
         for(i = 29; i >= 0; i--)
         {
                 sum[i] = ((previous[i] - '0') + (current[i] - '0')) + carry;
@@ -37,7 +39,6 @@ int main(void)
         }
 
         /** print Sum */
-        int print_flage = 0;
         for(i = 0; i <= 29; i++)
         {
             if (sum[i] != '0')
