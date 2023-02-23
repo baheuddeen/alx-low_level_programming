@@ -6,7 +6,7 @@
  */
 void print_number(int n)
 {
-	int x = n / n;
+	int x;
 
 	if (n == 0)
 	{
@@ -21,6 +21,7 @@ void print_number(int n)
 	}
 
 	/** get the upper 10s of the number */
+	x = n / n;
 	while (n >= x)
 	{
 		x *= 10;
