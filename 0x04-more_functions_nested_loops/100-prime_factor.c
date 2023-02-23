@@ -19,6 +19,6 @@ int main(void)
 		i++;
 	}
 	printf("%d\n", largest_prime_factor);
-	
+
 	return (0);
 }
