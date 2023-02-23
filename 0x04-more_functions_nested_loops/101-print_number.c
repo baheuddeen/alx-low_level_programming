@@ -6,30 +6,16 @@
  */
 void print_number(int n)
 {
-	int x;
-
-	if (n == 0)
-	{
-		_putchar(n + '0');
-		return;
-	}
+	unsigned int num = n;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n *= -1;
+		num = -num;
 	}
 
-	/** get the upper 10s of the number */
-	x = n / n;
-	while (n >= x)
-	{
-		x *= 10;
-	}
+	if ((num / 10) > 0)
+		print_number(num / 10);
 
-	for (x /= 10; x > 0; x /= 10)
-	{
-		_putchar(n / x + '0');
-		n %= x;
-	}
+	_putchar((num % 10) + '0');
 }
