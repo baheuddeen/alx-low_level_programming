@@ -1,5 +1,5 @@
 #include "main.h"
-int print_number(int n);
+int print_a_number(int n);
 
 /**
  * more_numbers -   prints 10 times the numbers, from 0 to 14,
@@ -20,13 +20,13 @@ void more_numbers(void)
 }
 
 /**
- * print_number - print number with more than one digit using _putchar.
+ * print_a_number - print number with more than one digit using _putchar.
  *
  * @n: number to print.
  *
  * Return: 1 (success).
  */
-int print_number(int n)
+int print_a_number(int n)
 {
 	int x = 1;
 	int num = n;
