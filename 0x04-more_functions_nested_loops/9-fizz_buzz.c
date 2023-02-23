@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
  * main -  Entry point.
@@ -22,7 +21,8 @@ int main(void)
 			if (i % 5 == 0)
 				printf("Buzz");
 		}
-		printf(" ");
+		if (i != 100)
+			printf(" ");
 	}
 	putchar('\n');
 	return (0);
