@@ -9,7 +9,10 @@ void print_number(int n)
 	int x = 1;
 
 	if (n == 0)
+	{
 		_putchar('0');
+		return;
+	}
 
 	if (n < 0)
 	{
