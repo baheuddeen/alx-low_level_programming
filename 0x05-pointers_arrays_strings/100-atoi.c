@@ -27,7 +27,5 @@ int _atoi(char *s)
 		if(*(s + i - 2) == '-')
 			result *= -1;
 	}
-	printf("%d", result);
-	printf("\n");
-	return 0;
+	return result;
 }
