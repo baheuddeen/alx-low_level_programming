@@ -5,27 +5,26 @@
  * _atoi - convert a string to an integer.
  * @s: string.
  * Return: converted value.
-*/
+ */
 int _atoi(char *s)
 {
-	int i = 0, l = 0;
-	int result = 0, value = 1;
+	int sign = 1;
+	unsigned int result = 0;
 
-	while (*(s + l) != '\0')
+	while (*(s) != '\0')
 	{
-		l++;
-	}
-	for (i = l; i > 0; i--)
-	{
-		int digit = *(s + i - 1) - '0';
+		int digit = *s - '0';
 
-		if( digit >= 0 &&  digit <= 9)
+		if (*s == '-')
+			sign *= -1;
+		else if (digit >= 0 && digit <= 9)
 		{
-			result += value * digit;
-			value *= 10;
+			result = (result * 10) + digit;
 		}
-		if(*(s + i - 2) == '-')
-			result *= -1;
+		else if (result > 0)
+			break;
+		s++;
 	}
-	return result;
+
+	return (result * sign);
 }
