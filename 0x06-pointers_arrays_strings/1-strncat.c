@@ -10,14 +10,18 @@
 char *_strncat(char *dest, char *src, int n)
 {
 	char *temp = dest;
-	int i = 1;
+	int i = 0;
 
 	/* get the null char position*/
 	while (*dest)
 		dest++;
-	while ((*(dest++) = *(src++)) && i++ < n)
-		;
-	if(*dest != '\0')
-		*dest = '\0';
+	while (*src && i < n)
+	{
+		*dest = *src;
+		dest++;
+		src++;
+		i++;
+	}
+	*dest = '\0';
 	return (temp);
 }
