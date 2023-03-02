@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * rot13 - encodes a string using rot13.
@@ -19,11 +18,9 @@ char *rot13(char *s)
 		p_code = code;
 		while (*p_letters)
 		{
-			printf("letter:%c, s: %c, code: %c\n", *p_letters, *s, *p_code);
 			if (*s == *p_letters)
 			{
 				*s = *p_code;
-				printf("after: letter:%c, s: %c, code: %c\n", *p_letters, *s, *p_code);
 				break;
 			}
 			p_letters++;
