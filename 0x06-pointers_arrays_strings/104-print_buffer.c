@@ -13,6 +13,12 @@ void print_buffer(char *b, int size)
 	char *current_char = b;
 	int i = 0;
 
+	if (size <= 0)
+	{
+		printf("\n");
+		return;
+	}
+	
 	while (i < size)
 	{
 		i++;
