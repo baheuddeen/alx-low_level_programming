@@ -12,9 +12,9 @@ char *_strstr(char *haystack, char *needle)
 {
 	void *null = 0;
 
-	if(!*needle){
+	if (!*needle)
 		return (null);
-	}
+
 	while (*haystack)
 	{
 		int i;
