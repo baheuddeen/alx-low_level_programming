@@ -2,7 +2,7 @@
 int is_palindrome_v2(char *, int, int);
 
 /**
- * _puts_recursion -  palindrome checker.
+ * is_palindrome -  palindrome checker.
  * @s: string to print.
  * Return:  1 if a string is a palindrome and 0 if not.
  */
@@ -20,6 +20,7 @@ int is_palindrome(char *s)
 /**
  * is_palindrome_v2 -  palindrome checker.
  * @s: string to print.
+ * @length: string length.
  * @c: counter.
  * Return:  1 if a string is a palindrome and 0 if not.
  */
