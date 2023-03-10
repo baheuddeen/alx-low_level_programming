@@ -1,4 +1,6 @@
 #include "main.h"
+#define TRUE 1
+#define FALSE 0
 
 /**
  * _islower - check if char is lowercase
