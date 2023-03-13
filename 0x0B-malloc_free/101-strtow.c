@@ -17,7 +17,7 @@ char **strtow(char *str)
 	int words_count = 0;
 	int i = 0, j = 0;
 
-	if (!str || *str)
+	if (!str || !*str)
 	{
 		return (NULL);
 	}
