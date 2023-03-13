@@ -29,9 +29,9 @@ char *argstostr(int ac, char **av)
 			args_size++;
 		}
 	}
-	pt_str = (char *)malloc(sizeof(char) * (args_size + ac));
+	pt_str = (char *)malloc(sizeof(char) * (args_size + ac + 1));
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		char *arg = av[i];
 
