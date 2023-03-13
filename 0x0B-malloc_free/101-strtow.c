@@ -27,7 +27,7 @@ char **strtow(char *str)
 	{
 		return (NULL);
 	}
-	
+
 	words = (char **)malloc(sizeof(char *) * (words_count + 1));
 	if (!words)
 	{
