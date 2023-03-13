@@ -23,6 +23,11 @@ char **strtow(char *str)
 	}
 
 	words_count = count_words(str);
+	if (words_count == 0)
+	{
+		return (NULL);
+	}
+	
 	words = (char **)malloc(sizeof(char *) * (words_count + 1));
 	if (!words)
 	{
