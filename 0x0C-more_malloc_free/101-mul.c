@@ -13,7 +13,6 @@ void multiply(char *num1, char *num2);
 int main(int argc, char **argv)
 {
 	char *num1 = NULL, *num2 = NULL;
-	char *res = NULL;
 
 	if (argc != 3)
 	{
