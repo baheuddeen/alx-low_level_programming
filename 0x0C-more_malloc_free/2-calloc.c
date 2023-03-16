@@ -22,7 +22,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	for (i = 0; i < nmemb; i++)
 	{
 		/* we should cast here..*/
-		*(int *)arr = 0;
+		*((char *)arr + i) = 0;
 	}
 
 	return (arr);
