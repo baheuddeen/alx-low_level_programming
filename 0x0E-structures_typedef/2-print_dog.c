@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * init_dog - prints a struct dog
+ * print_dog - prints a struct dog.
  * @d: pointer to the variable -dog- .
  */
 void print_dog(struct dog *d)
@@ -14,14 +14,7 @@ void print_dog(struct dog *d)
 	}
 
 	printf("Name: %s\n", (d->name) ? (d->name) : ("(nil)"));
-	if (d->age)
-	{
-		printf("Age: %f\n", d->age);
-	} 
-	else
-	{
-		printf("Age: %s\n", "(nil)");
-	}
+	printf("Age: %f\n", d->age);
 	printf("Owner: %s\n", (d->owner) ? (d->owner) : ("(nil)"));
-	
+
 }
