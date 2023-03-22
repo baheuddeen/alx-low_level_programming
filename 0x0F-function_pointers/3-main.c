@@ -13,13 +13,13 @@ int main(int argc, char *argv[])
 {
 	int first_number = 0, second_number = 0, result = 0;
 	int (*operation_fun)(int, int);
+	char *op = NULL;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	char *op = NULL;
 
 	op = argv[2];
 	operation_fun = get_op_func(op);
