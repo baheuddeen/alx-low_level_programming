@@ -12,6 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int first_number = 0, second_number = 0, result = 0;
+	char *op = NULL;
 	int (*operation_fun)(int, int);
 
 	if (argc != 4)
@@ -20,7 +21,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	operation_fun = get_op_func(argv[2]);
+	op = argv[2];
+	operation_fun = get_op_func(op);
 
 	if (operation_fun == NULL)
 	{
