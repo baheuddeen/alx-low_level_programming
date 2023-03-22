@@ -16,21 +16,23 @@ int main(int argc, char *argv[])
 	p_main += 4;
 	if (argc != 2)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(1);
 	}
 	size = atoi(argv[1]);
 	if (size < 0)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(2);
 	}
 
 	for (i = 0; i < size; i++)
 	{
 		int value = *((unsigned char *)(p_main) + i);
-
-		printf("%x ", value);
+		if (i != size - 1)
+		{
+			printf("%x ", value);
+		}
 	}
 	printf("\n");
 	return (0);
