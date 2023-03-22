@@ -10,10 +10,8 @@
 int main(int argc, char *argv[])
 {
 	int i = 0, size = 0;
-	int (*p_main)(int, char **);
+	char *p_main = (char *) main;
 
-	p_main = main;
-	p_main += 4;
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -28,10 +26,10 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < size; i++)
 	{
-		int value = *((unsigned char *)(p_main) + i);
+		printf("%02x", p_main[i] & 0xFF);
 		if (i != size - 1)
 		{
-			printf("%x ", value);
+			printf(" ");
 		}
 	}
 	printf("\n");
