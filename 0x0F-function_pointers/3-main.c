@@ -6,7 +6,7 @@
  * main - Entry point.
  * @argc: arguments count.
  * @argv: arguments vector.
- * Return: pointer to the operation function.
+ * Return: (0) on success.
  */
 
 int main(int argc, char *argv[])
@@ -30,13 +30,8 @@ int main(int argc, char *argv[])
 
 	first_number = atoi(argv[1]);
 	second_number = atoi(argv[3]);
-
-	if ((*argv[2] == '/' || *argv[2] == '%') && second_number == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
 	result = operation_fun(first_number, second_number);
+
 	printf("%d\n", result);
 	return (0);
 }
