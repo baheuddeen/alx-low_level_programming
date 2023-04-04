@@ -23,7 +23,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 
 	if (idx == 0)
-		node_idx = *head;
+	{
+		add_nodeint(head, n);
+		return (new_node);
+	}
 	else
 		node_idx = get_nodeint_at_index(*head, idx - 1);
 
@@ -67,4 +70,34 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		counter++;
 	}
 	return (NULL);
+}
+
+
+
+/**
+ * add_nodeint - adds a new node at the beginning of a list_t.
+ * @head: linked list head.
+ * @n: number.
+ * Return: the address of the first node.
+ */
+listint_t *add_nodeint(listint_t **head, const int n)
+{
+	listint_t *node = NULL;
+
+	node = malloc(sizeof(listint_t));
+	if (!node)
+	{
+		return (NULL);
+	}
+
+	node->next = (*head);
+	if ((*head))
+	{
+		node->n = (*head)->n;
+	}
+
+	(*head) = node;
+	(*head)->n = n;
+
+	return ((*head));
 }
