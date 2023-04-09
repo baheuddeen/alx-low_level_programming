@@ -16,7 +16,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	size_t counter = 0;
 	FILE *file_to_read;
 	char buffer[BUF_SIZE];
-	int i = 0, end_of_file = 1;
+	int i = 0;
 
 	if (!filename)
 		return (counter);
