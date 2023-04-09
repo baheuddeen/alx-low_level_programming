@@ -17,7 +17,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int file_to_read;
 	char buffer[BUF_SIZE];
 
-
 	if (!filename)
 		return (counter);
 
@@ -33,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		for (i = 0; counter < letters && i < bytes_read; i++)
 		{
 			int check = write(STDOUT_FILENO, &buffer[i], 1);
-			if(check == -1)
+			if (check == -1)
 				return (0);
 			counter++;
 		}
