@@ -34,9 +34,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			int check = write(STDOUT_FILENO, &buffer[i], 1);
 			if (check == -1)
 				return (0);
-			counter++;
+			counter++;	
 		}
 	}
+
+	close(file_to_read);
 
 	return (counter);
 }
