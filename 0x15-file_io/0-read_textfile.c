@@ -28,18 +28,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (counter);
 	}
 
-	while (i < letters)
+	while ((bytes_read = read(fileno(file_to_read), buffer, BUF_SIZE)))
 	{
-		bytes_read = fread(buffer, sizeof(char), BUF_SIZE, file_to_read);
-		if (bytes_read == 0)
-			break;
-		if (bytes_read < BUF_SIZE)
-			buffer[bytes_read] = '\0';
-		else
-			buffer[BUF_SIZE - 1] = '\0';
-		counter += bytes_read;
-		i += bytes_read;
-		printf("%s", buffer);
+		for (i = 0; counter < letters && i < bytes_read; i++)
+		{
+			int check = write(STDOUT_FILENO, &buffer[i], 1);
+			if(check == -1)
+				return (0);
+			counter++;
+		}
 	}
 
 	return (counter);
