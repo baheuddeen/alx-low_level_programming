@@ -13,7 +13,8 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	size_t counter = 0, i = 0, bytes_read;
+	size_t counter = 0;
+	ssize_t bytes_read = 0, i = 0;
 	int file_to_read;
 	char buffer[BUF_SIZE];
 
@@ -27,14 +28,22 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (counter);
 	}
 
-	while ((bytes_read = read(file_to_read, buffer, BUF_SIZE)))
+	while (1)
 	{
+		bytes_read = read(file_to_read, buffer, BUF_SIZE);
+		if (bytes_read == -1)
+			return (0);
+
+		if (bytes_read == 0)
+			break;
+
 		for (i = 0; counter < letters && i < bytes_read; i++)
 		{
 			int check = write(STDOUT_FILENO, &buffer[i], 1);
+
 			if (check == -1)
 				return (0);
-			counter++;	
+			counter++;
 		}
 	}
 
