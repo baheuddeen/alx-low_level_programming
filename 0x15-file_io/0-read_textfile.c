@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-#define BUF_SIZE 11
+#define BUF_SIZE 256
 
 /**
  * read_textfile - reads a text file and prints it to the POSIX standard output
@@ -13,10 +13,9 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	size_t counter = 0;
+	size_t counter = 0, i = 0;
 	FILE *file_to_read;
 	char buffer[BUF_SIZE];
-	int i = 0;
 
 	if (!filename)
 		return (counter);
@@ -28,12 +27,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (counter);
 	}
 
-	while (fread(buffer, BUF_SIZE, 1, file_to_read))
+	while (!feof(file_to_read))
 	{
-		for (i = 0; counter < letters && i < BUF_SIZE; i++)
-		{
-			if (!&buffer[i])
-				break;
+		size_t bytes_read = fread(buffer, 1, BUF_SIZE, file_to_read);
+		
+		for (i = 0; counter < letters && i < bytes_read; i++)
+		{	
 			counter += write(STDOUT_FILENO, &buffer[i], 1);
 		}
 	}
